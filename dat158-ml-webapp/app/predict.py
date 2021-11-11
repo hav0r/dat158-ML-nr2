@@ -7,16 +7,12 @@ model = joblib.load('dat158-ml-webapp/models/rf_model.joblib')
 
 def data_transformation_simple(data):
     
-    if "index" in data.columns:
-        data=data.drop("index",axis=1)
-    if "Id" in data.columns:
-        data=data.drop("Id",axis=1)
     if "SalePrice" in data.columns:
         labels = data["SalePrice"]
         data=data.drop("SalePrice",axis=1)
     else:
         labels=None
-    unwanted=['MSSubClass', 'MSZoning', 'LotFrontage', 'LotArea', 'Street', 'Alley',
+    unwanted=['Id','index','MSSubClass', 'MSZoning', 'LotFrontage', 'LotArea', 'Street', 'Alley',
    'LotShape', 'LandContour', 'Utilities', 'LotConfig', 'LandSlope',
    'Neighborhood', 'Condition1', 'Condition2', 'BldgType', 'HouseStyle',
    'OverallCond', 'RoofStyle',
