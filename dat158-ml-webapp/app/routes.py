@@ -3,7 +3,6 @@ from app import app
 from flask import render_template, session, redirect, url_for
 from app.forms import DataForm
 from app.predict import predict
-import pickle
 
 app.config['SECRET_KEY']='HALVOR'
 
