@@ -1,0 +1,15 @@
+{% extends "bootstrap/base.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+{% block title %}ML-App{% endblock %}
+
+{% block content %}
+
+<div class='container'>
+    {{wtf.quick_form(form)}}
+</div>
+
+<header class='title'>
+    The estimated value of the house is: {{session.get('prediction')}}
+</header>
+{% endblock %}
