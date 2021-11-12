@@ -34,6 +34,8 @@
 </div>
 
 <div>
+    {% if session.get('prediction') %}
     <h2>The estimated value of the house is: {{session.get('prediction')}}</h2>
+    {% endif %}
 </div>
 {% endblock %}
