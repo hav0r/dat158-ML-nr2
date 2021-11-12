@@ -1,0 +1,43 @@
+{% extends "bootstrap/base.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+{% block title %}ML-App{% endblock %}
+
+{% block navbar %}
+<div class="navbar navbar-inverse" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="{{ url_for('home')}}">ML Web Application</a>
+    </div>
+    <div class="navbar-collapse collapse">
+        <ul class="nav navbar-nav">
+            <li><a href="{{ url_for('home')}}">Home</a></li>
+            <li><a href="{{ url_for('predict_page')}}">Predict</a></li>
+            <li><a href="{{ url_for('explore_page')}}">Explore</a></li>
+        </ul>
+    </div>
+</div>
+</div>
+
+{% endblock %}
+
+{% block content %}
+<div style="text-align: center;">
+    <h2>Overall quality rating in houses from 1 to 10</h2>
+    <img src="data:image/png;base64, {{ plot0_url }}" alt="Histograms">
+</div>
+<div style="text-align: center;">
+    <h2>Heatmap showing the correlation matrix</h2>
+    <img src="data:image/png;base64, {{ plot1_url }}" alt="Heatmap">
+</div>
+<div>
+
+</div>
+
+{% endblock %}

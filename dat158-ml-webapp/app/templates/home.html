@@ -1,0 +1,45 @@
+{% extends "bootstrap/base.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+{% block title %}ML-App{% endblock %}
+
+{% block navbar %}
+<div class="navbar navbar-inverse" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="{{ url_for('home')}}">ML Web Application</a>
+    </div>
+    <div class="navbar-collapse collapse">
+        <ul class="nav navbar-nav">
+            <li><a href="{{ url_for('home')}}">Home</a></li>
+            <li><a href="{{ url_for('predict_page')}}">Predict</a></li>
+            <li><a href="{{ url_for('explore_page')}}">Explore</a></li>
+        </ul>
+    </div>
+</div>
+</div>
+
+{% endblock %}
+
+{% block content %}
+<head>
+    <div style="text-align: center;" ><img src="https://storage.googleapis.com/kaggle-competitions/kaggle/5407/media/housesbanner.png" alt="housing_price_ml"></div>
+    <h1 style="text-align: center;">Housing price predictor</h1>
+    <h4 style="text-align: center;"> by Halvor Eid</h4>
+</head>
+<body>
+    <div style="text-align: center;">This web application utilises a machine learning model to predict the sale price of a house in Ames, Iowa.</div>
+    <form style="text-align: center;" action="/predict_page">
+        <input type="submit" value="Predict" />
+    </form>
+    <form style="text-align: center;" action="/explore_page">
+        <input type="submit" value="Explore" />
+    </form>
+</body>
+{% endblock %}

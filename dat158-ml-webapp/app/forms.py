@@ -1,27 +1,25 @@
-from flask import sessions
-from flask.app import iscoroutinefunction
 from flask_wtf import FlaskForm
-from wtforms import StringField, IntegerField, BooleanField, SubmitField
-from wtforms.fields.core import FloatField, SelectField
-from wtforms.validators import DataRequired, NumberRange
+from wtforms import IntegerField, SubmitField
+from wtforms.fields.core import FloatField
+from wtforms.validators import NumberRange
 
 
 
 class DataForm(FlaskForm):
     OverallQual=IntegerField("Overall quality of the house(1-10)",validators=[NumberRange(min=0,max=10)])
     YearBuilt=IntegerField("Year the house was built")
-    YearRemodAdd=IntegerField("YearRemodAdd")
+    YearRemodAdd=IntegerField("Year remodeled")
     MasVnrArea=FloatField("MasVnrArea")
     TotalBsmtSF=IntegerField("Total basement square footage")
-    FirstFlrSF=IntegerField("1stFlrSF")
-    GrLivArea=IntegerField("GrLivArea")
+    FirstFlrSF=IntegerField("First floor square footage")
+    GrLivArea=IntegerField("Ground living area")
     FullBath=IntegerField("Number of full bathrooms in the house")
     TotRmsAbvGrd=IntegerField("Total rooms above ground")
     Fireplaces=IntegerField("Fireplaces")
-    GarageYrBlt=IntegerField("GarageYrBlt")
+    GarageYrBlt=IntegerField("Garage year built")
     GarageCars=IntegerField("Amount of possible cars in garage")
     GarageArea=IntegerField("Garage area")
-    WoodDeckSF=IntegerField("WoodDeckSF")
-    OpenPorchSF=IntegerField("OpenPorchSF")
+    WoodDeckSF=IntegerField("Wood deck square footage")
+    OpenPorchSF=IntegerField("Open porch square footage")
 
     submit = SubmitField("Send inn")
